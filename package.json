@@ -1,0 +1,26 @@
+{
+	"name": "mokku-ui-library",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Mokku-Solutions/Mokku-UI-Library.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Mokku-Solutions/Mokku-UI-Library/issues"
+	},
+	"homepage": "https://github.com/Mokku-Solutions/Mokku-UI-Library#readme",
+	"dependencies": {
+		"prettier": "^3.5.3",
+		"react": "^19.1.0",
+		"typescript": "^5.8.2"
+	}
+}
