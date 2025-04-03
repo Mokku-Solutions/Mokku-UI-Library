@@ -1,0 +1,21 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.codeActionsOnSave": ["source.fixAll", "source.organizeImports"],
+	"prettier.useTabs": true,
+	"prettier.printWidth": 120,
+	"eslint.useFlatConfig": true,
+	"eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+
+	"tailwindCSS.includeLanguages": {
+		"typescript": "html",
+		"typescriptreact": "html",
+		"javascript": "html",
+		"javascriptreact": "html"
+	},
+	"tailwindCSS.experimental.classRegex": [
+		["className=\"([^\"]*)", 1],
+		["class=\"([^\"]*)", 1],
+		["tw=\"([^\"]*)", 1]
+	]
+}
