@@ -1,0 +1,41 @@
+{
+	"name": "mokku-ui-library",
+	"version": "1.0.0",
+	"description": "Mokku UI Library",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+		"format": "prettier --write .",
+		"check-format": "prettier --check .",
+		"prepare-code": "npm run lint:fix && npm run format"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Mokku-Solutions/Mokku-UI-Library.git"
+	},
+	"keywords": [],
+	"author": "Mokku Solutions",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Mokku-Solutions/Mokku-UI-Library/issues"
+	},
+	"homepage": "https://github.com/Mokku-Solutions/Mokku-UI-Library#readme",
+	"devDependencies": {
+		"typescript": "^5.8.2",
+		"@eslint/eslintrc": "^3.0.0",
+		"@eslint/js": "^9.0.0",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-react": "^7.34.1",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"prettier": "^3.2.4",
+		"typescript-eslint": "^7.4.0"
+	},
+	"peerDependencies": {
+		"react": ">=16"
+	}
+}
