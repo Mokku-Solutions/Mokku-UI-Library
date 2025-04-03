@@ -18,9 +18,15 @@
 		"url": "https://github.com/Mokku-Solutions/Mokku-UI-Library/issues"
 	},
 	"homepage": "https://github.com/Mokku-Solutions/Mokku-UI-Library#readme",
-	"dependencies": {
+	"devDependencies": {
+		"typescript": "^5.8.2",
 		"prettier": "^3.5.3",
+		"tailwindcss": "^4.1.1",
+		"@types/react": "^19.1.0",
 		"react": "^19.1.0",
-		"typescript": "^5.8.2"
+		"react-dom": "^19.1.0",
+		"tailwind-merge": "^3.0.1",
+		"tailwindcss-animate": "^1.0.7",
+		"class-variance-authority": "^0.7.1"
 	}
 }
