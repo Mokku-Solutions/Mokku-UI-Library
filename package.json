@@ -4,6 +4,7 @@
 	"private": false,
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"style": "dist/styles.css",
 	"files": [
 		"dist"
 	],
@@ -21,14 +22,15 @@
 		"react-dom": "^18.0.0"
 	},
 	"scripts": {
-		"build-lib": "rollup -c",
-		"prepublishOnly": "npm run build-lib",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"build-lib": "rollup -c && npm run build-css",
+		"build-css": "tailwindcss -i ./library.css -o ./dist/styles.css --minify",
 		"lint": "next lint",
 		"storybook": "storybook dev -p 6006",
-		"build-storybook": "storybook build"
+		"build-storybook": "storybook build",
+		"prepublishOnly": "npm run build-lib"
 	},
 	"dependencies": {
 		"@radix-ui/react-slot": "^1.1.2",

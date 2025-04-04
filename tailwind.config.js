@@ -10,4 +10,8 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [],
+	safelist: ["w-full", "w-[95%]", "w-[90%]", "w-[80%]"],
+	corePlugins: {
+		preflight: false, // opcional si querés evitar resets
+	},
 };
