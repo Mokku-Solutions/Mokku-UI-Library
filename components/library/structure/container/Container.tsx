@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {
+export type ContainerVariant = VariantProps<typeof containerVariants>["variant"];
+
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	children: React.ReactNode;
 	className?: string;
+	variant?: ContainerVariant;
 }
 
-const containerVariants = cva("m-auto", {
+export const containerVariants = cva("m-auto", {
 	variants: {
 		variant: {
 			large: "w-[95%]",

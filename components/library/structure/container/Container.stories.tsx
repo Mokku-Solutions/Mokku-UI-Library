@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import React from "react";
 import Container from "./Container";
 
 const meta: Meta<typeof Container> = {
@@ -62,11 +63,11 @@ export const ResponsiveExample: Story = {
 		),
 	},
 	render: (args) => (
-		<>
-			<div className="mb-4 p-2 text-sm  bg-yellow-100 rounded text-black font-bold">
+		<div className="w-full bg-green-300">
+			<div className="w-full mb-4 p-4 text-sm  bg-green-600 text-white">
 				! Usá los controles de abajo para cambiar el tamaño del Container (small, normal, large, full)
 			</div>
 			<Container {...args} />
-		</>
+		</div>
 	),
 };
