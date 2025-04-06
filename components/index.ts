@@ -1,1 +1,1 @@
-export * from "./library/structure";
+export * from './library/structure'
