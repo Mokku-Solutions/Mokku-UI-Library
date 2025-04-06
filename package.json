@@ -17,10 +17,6 @@
 	],
 	"author": "Mokku Solutions",
 	"license": "MIT",
-	"peerDependencies": {
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
-	},
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
@@ -32,7 +28,19 @@
 		"build-storybook": "storybook build",
 		"prepublishOnly": "npm run build-lib"
 	},
-	"dependencies": {},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./styles.css": {
+			"default": "./dist/styles.css"
+		},
+		"./structure": {
+			"import": "./dist/components/library/structure/index.js",
+			"types": "./dist/components/library/structure/index.d.ts"
+		}
+	},
 	"devDependencies": {
 		"@radix-ui/react-slot": "^1.1.2",
 		"@tailwindcss/cli": "^4.1.2",
@@ -84,6 +92,10 @@
 		"tailwindcss": "^4.1.2",
 		"typescript": "^5",
 		"vitest": "^3.1.1"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
 	},
 	"eslintConfig": {
 		"extends": [

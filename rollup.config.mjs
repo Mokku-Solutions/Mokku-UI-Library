@@ -7,21 +7,20 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
 const rollupConfigs = [
 	{
-		input: "components/index.ts",
-		output: [
-			{
-				file: "dist/index.js",
-				format: "esm",
-				sourcemap: true,
-			},
-		],
+		input: ["components/index.ts", "components/library/structure/index.ts"],
+		output: {
+			dir: "dist",
+			format: "esm",
+			preserveModules: true,
+			preserveModulesRoot: "components",
+			sourcemap: true,
+		},
 		plugins: [
 			peerDepsExternal(),
 			resolve(),
 			commonjs(),
 			typescript({
 				tsconfig: "./tsconfig.json",
-				// no "jsx: preserve" si no querés
 				exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
 			}),
 			babel({
@@ -32,8 +31,13 @@ const rollupConfigs = [
 		],
 	},
 	{
-		input: "components/index.ts",
-		output: [{ file: "dist/index.d.ts", format: "es" }],
+		input: ["components/index.ts", "components/library/structure/index.ts"],
+		output: {
+			dir: "dist",
+			format: "esm",
+			preserveModules: true,
+			preserveModulesRoot: "components",
+		},
 		plugins: [dts()],
 	},
 ];
