@@ -3,8 +3,10 @@
 /* Este import añade el reset basado en Tailwind 4.x */
 @tailwind utilities;
 
-/* 
-   Con el safelist + sin content,
-   tailwind generará TODAS las clases base de utilities 
-   (millones de lineas).
-*/
+/* Forzar bg-red-700 manualmente */
+@layer utilities {
+	.bg-red-700 {
+		--tw-bg-opacity: 1;
+		background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+	}
+}
