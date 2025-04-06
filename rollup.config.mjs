@@ -21,9 +21,7 @@ const rollupConfigs = [
 			commonjs(),
 			typescript({
 				tsconfig: "./tsconfig.json",
-				declaration: true,
-				declarationDir: "dist",
-				jsx: "preserve",
+				// no "jsx: preserve" si no querés
 				exclude: ["**/*.stories.tsx", "**/*.test.tsx"],
 			}),
 			babel({

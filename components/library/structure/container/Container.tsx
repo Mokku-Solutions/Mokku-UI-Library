@@ -9,7 +9,7 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
 	variant?: ContainerVariant;
 }
 
-export const containerVariants = cva("m-auto", {
+export const containerVariants = cva("m-auto text-center bg-red-700", {
 	variants: {
 		variant: {
 			large: "w-[95%]",

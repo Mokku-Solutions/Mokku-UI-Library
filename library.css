@@ -1,13 +1,10 @@
+@import "tailwindcss/preflight";
+
+/* Este import añade el reset basado en Tailwind 4.x */
 @tailwind utilities;
 
-/* Agregá acá tu safelist explícita si usás CVA u otras clases dinámicas */
-@layer utilities {
-	.w-full {
-	}
-	.w-\[95\%\] {
-	}
-	.w-\[90\%\] {
-	}
-	.w-\[80\%\] {
-	}
-}
+/* 
+   Con el safelist + sin content,
+   tailwind generará TODAS las clases base de utilities 
+   (millones de lineas).
+*/
