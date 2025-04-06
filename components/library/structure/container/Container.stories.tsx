@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
-import Container from "./Container";
+import { Container } from "./Container";
 
 const meta: Meta<typeof Container> = {
 	title: "Layout/Container",
@@ -8,7 +8,7 @@ const meta: Meta<typeof Container> = {
 	tags: ["autodocs"],
 	argTypes: {
 		variant: {
-			control: { type: "radio" },
+			control: "radio",
 			options: ["small", "normal", "large", "full"],
 		},
 	},
@@ -17,11 +17,12 @@ const meta: Meta<typeof Container> = {
 export default meta;
 type Story = StoryObj<typeof Container>;
 
-export const ResponsiveExample: Story = {
+export const Playground: Story = {
 	args: {
 		variant: "normal",
+		className: "text-center pb-4",
 		children: (
-			<div className="space-y-6 p-6 bg-white rounded-xl shadow-sm">
+			<div className="space-y-6 bg-white rounded-xl shadow-sm p-6">
 				<div className="space-y-2">
 					<h1 className="text-3xl font-extrabold text-gray-900">Mokku Solutions</h1>
 					<p className="text-gray-700 text-base leading-relaxed">
@@ -32,30 +33,17 @@ export const ResponsiveExample: Story = {
 				</div>
 
 				<div className="grid grid-cols-2 gap-4">
-					<div className="p-4 rounded-lg bg-white border shadow-sm">
-						<h2 className="text-lg font-semibold text-gray-800">🧱 Componentes</h2>
-						<p className="text-sm text-gray-600">
-							Biblioteca de UI personalizable basada en Tailwind y ShadCN para proyectos web y móviles.
-						</p>
-					</div>
-					<div className="p-4 rounded-lg bg-white border shadow-sm">
-						<h2 className="text-lg font-semibold text-gray-800">🚀 Performance</h2>
-						<p className="text-sm text-gray-600">
-							Arquitectura optimizada para velocidad, modularidad y experiencia de desarrollo fluida.
-						</p>
-					</div>
-					<div className="p-4 rounded-lg bg-white border shadow-sm">
-						<h2 className="text-lg font-semibold text-gray-800">📦 Reusabilidad</h2>
-						<p className="text-sm text-gray-600">
-							Componentes y utilidades diseñadas para ser reutilizadas en múltiples apps y productos.
-						</p>
-					</div>
-					<div className="p-4 rounded-lg bg-white border shadow-sm">
-						<h2 className="text-lg font-semibold text-gray-800">🌐 Deploy sin fricción</h2>
-						<p className="text-sm text-gray-600">
-							Integración directa con Vercel, GitHub Pages o infraestructura propia.
-						</p>
-					</div>
+					{[
+						["🧱 Componentes", "UI personalizable basada en Tailwind y ShadCN."],
+						["🚀 Performance", "Arquitectura optimizada para velocidad."],
+						["📦 Reusabilidad", "Componentes diseñados para múltiples productos."],
+						["🌐 Deploy sin fricción", "Integración con Vercel, GitHub Pages y más."],
+					].map(([title, desc], i) => (
+						<div key={i} className="p-4 rounded-lg bg-white border shadow-sm">
+							<h2 className="text-lg font-semibold text-gray-800">{title}</h2>
+							<p className="text-sm text-gray-600">{desc}</p>
+						</div>
+					))}
 				</div>
 
 				<p className="text-sm text-gray-500 text-center">Construido con ♥ por el equipo Mokku — 2025</p>
@@ -63,9 +51,9 @@ export const ResponsiveExample: Story = {
 		),
 	},
 	render: (args) => (
-		<div className="w-full bg-green-300">
-			<div className="w-full mb-4 p-4 text-sm  bg-green-600 text-white">
-				! Usá los controles de abajo para cambiar el tamaño del Container (small, normal, large, full)
+		<div className="w-full bg-green-100">
+			<div className="w-full mb-4 p-4 text-sm bg-green-600 text-white font-semibold rounded">
+				Usá los controles para cambiar el tamaño del Container (small, normal, large, full)
 			</div>
 			<Container {...args} />
 		</div>

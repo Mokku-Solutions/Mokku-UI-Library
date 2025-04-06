@@ -1,15 +1,8 @@
 import { cn } from "@/lib/utils";
-import { cva, VariantProps } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
+import * as React from "react";
 
-export type ContainerVariant = VariantProps<typeof containerVariants>["variant"];
-
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-	children: React.ReactNode;
-	className?: string;
-	variant?: ContainerVariant;
-}
-
-export const containerVariants = cva("m-auto text-center bg-red-700", {
+export const containerVariants = cva("m-auto", {
 	variants: {
 		variant: {
 			large: "w-[95%]",
@@ -23,12 +16,16 @@ export const containerVariants = cva("m-auto text-center bg-red-700", {
 	},
 });
 
-const Container: React.FC<ContainerProps> = ({ children, variant, className, ...props }) => {
-	return (
-		<div className={cn(containerVariants({ variant }), className)} {...props}>
-			{children}
-		</div>
-	);
-};
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof containerVariants> {}
 
-export default Container;
+export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
+	({ className, children, variant, ...props }, ref) => {
+		return (
+			<div ref={ref} className={cn(containerVariants({ variant }), className)} {...props}>
+				{children}
+			</div>
+		);
+	}
+);
+
+Container.displayName = "Container";
