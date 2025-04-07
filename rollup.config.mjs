@@ -39,7 +39,8 @@ const rollupConfigs = [
             file: 'dist/index.d.ts',
             format: 'es'
         },
-        plugins: [dts()]
+        plugins: [dts({ respectExternal: true, skipDiagnostics: true })],
+        external: ['class-variance-authority', 'react', 'react-dom']
     }
 ]
 
