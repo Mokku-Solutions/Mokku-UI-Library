@@ -36,10 +36,6 @@
         },
         "./styles.css": {
             "default": "./dist/styles.css"
-        },
-        "./structure": {
-            "import": "./dist/components/library/structure/index.js",
-            "types": "./dist/components/library/structure/index.d.ts"
         }
     },
     "devDependencies": {

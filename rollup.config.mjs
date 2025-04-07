@@ -6,13 +6,13 @@ import dts from 'rollup-plugin-dts'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
 const rollupConfigs = [
+    // JS/TS Build
     {
-        input: ['components/index.ts', 'components/library/structure/index.ts'],
+        input: 'components/index.ts',
         output: {
             dir: 'dist',
             format: 'esm',
-            preserveModules: true,
-            preserveModulesRoot: 'components',
+            preserveModules: false,
             sourcemap: true
         },
         plugins: [
@@ -21,7 +21,9 @@ const rollupConfigs = [
             commonjs(),
             typescript({
                 tsconfig: './tsconfig.json',
-                exclude: ['**/*.stories.tsx', '**/*.test.tsx']
+                exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+                declaration: true,
+                declarationDir: 'dist'
             }),
             babel({
                 extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -30,13 +32,12 @@ const rollupConfigs = [
             })
         ]
     },
+    // Type Declarations
     {
-        input: ['components/index.ts', 'components/library/structure/index.ts'],
+        input: 'components/index.ts',
         output: {
-            dir: 'dist',
-            format: 'esm',
-            preserveModules: true,
-            preserveModulesRoot: 'components'
+            file: 'dist/index.d.ts',
+            format: 'es'
         },
         plugins: [dts()]
     }
