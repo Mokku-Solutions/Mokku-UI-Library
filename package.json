@@ -1,6 +1,8 @@
 {
-    "name": "mokku-ui-library",
     "version": "1.0.7",
+    "name": "mokku-ui-library",
+    "author": "Mokku Solutions",
+    "license": "MIT",
     "private": false,
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -15,8 +17,6 @@
         "tailwind",
         "shadcn"
     ],
-    "author": "Mokku Solutions",
-    "license": "MIT",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
