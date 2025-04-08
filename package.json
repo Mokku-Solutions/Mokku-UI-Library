@@ -18,7 +18,7 @@
 		"shadcn"
 	],
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -p 3000",
 		"build": "next build",
 		"start": "next start",
 		"build-lib": "rollup -c && npm run build-css",
